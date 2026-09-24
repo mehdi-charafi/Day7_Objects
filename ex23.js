@@ -1,15 +1,14 @@
-let players = [{name: "Omar", score: 35}, {name: "Sara", score: 15}, {name: "Lina", score: 56}]
-let temp = {}
-let leaderboard = [...players]
+let product = [{name: "Pen", price: 5, quantity: 5}, {name: "Book", price: 50, quantity: 4}, {name: "Laptop", price: 5000, quantity: 8}]
+let max = product[0];
+let maxIndex = 0;
 
-for (let i = 0; i < leaderboard.length; i++) {
-    for (let j = i+1; j < leaderboard.length; j++) {
-        if (leaderboard[i].score > leaderboard[j].score) {
-            temp = leaderboard[i]
-            leaderboard[i] = leaderboard[j]
-            leaderboard[j] = temp
-        }
+for (let i = 0; i < product.length; i++) {
+    if (product[i].price > max.price) {
+        max = product[i]
+        maxIndex = i
     }
 }
 
-console.log([`${leaderboard[0].name}, ${leaderboard[1].name}, ${leaderboard[2].name}`])
+console.log(max)
+console.log(maxIndex)
+
